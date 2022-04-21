@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr th:each="book:${books}">
+            <td th:text="${book.bookid}"></td>
+            <td th:text="${book.bookname}"></td>
+            <td th:text="${book.bookcounts}"></td>
+            <td th:text="${book.detail}"></td>
+            <td><a th:href="@{/book/}+${book.bookid}">删除</a></td>
+            <td><a th:href="@{/book/}+${book.bookid}">修改</a></td>
+            <td></td>
+        </tr>
+    </table>
+    <a th:href="@{}">添加</a>
+</body>
+</html>
